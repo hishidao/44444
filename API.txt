@@ -70,10 +70,8 @@
         /// <param name="type">操作类型,4为删除评论，5为取消赞</param>
         /// <param name="comment">当type为4时，对应删除评论的id，通过WXSnsObjectDetail接口获取。当type为5时，comment不可用，置为0.</param>
         /// <param name="comment_type">
-        /// 此参数马志远增加。
         /// 原备注：评论类型,当删除评论时可用，2或者3.(规律未知)
         /// 
-        /// 马志远已研究得到的新备注：
         /// 当type=4，且comment_type=3时，将删除指定的comment的评论id的评论
         /// 当type=5时，comment和comment_type随便填，不影响。这是取消赞的。
         /// </param>
@@ -274,7 +272,7 @@
         //public static extern int Auth(string key);
 
         /// <summary>
-        /// 取消堆，此方法我估计是提供这些微信接口的人整出来的，实际与微信无关。目的仅是为了控制盈利
+        /// 
         /// </summary>
         /// <param name="IP">连接服务器的ip地址</param>
         /// <param name="port">该服务器的端口号</param>
@@ -329,7 +327,6 @@
         /// <summary>
         /// 生成62数据
         /// 
-        /// 马志远：
         /// 注意：62数据是扫码登录成功后，再获取，并保存下来，而不是其它方式登录后再保存。并且还要使用方法WXGetLoginToken保存下token
         /// </summary>
         /// <param name="objects"></param>

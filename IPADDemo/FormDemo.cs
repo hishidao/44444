@@ -367,5 +367,37 @@ namespace IPADDemo
             var res = weChatThread.Wx_DeleteUser(txt_friendwxid.Text);
         }
 
+        private void button41_Click(object sender, EventArgs e)
+        {
+            var res = weChatThread.Wx_SetWeChatID(txt_setWxid.Text);
+        }
+
+        private void button42_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            ofd.Filter = "二维码文件 |*.jpg;*.png";
+            ofd.ValidateNames = true;
+            ofd.CheckPathExists = true;
+            ofd.CheckFileExists = true;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string FileName = ofd.FileName;
+                var res = weChatThread.Wx_QRCodeDecode(FileName);
+                txt_qrcodeLog.Text = res.ConvertToString();
+            }
+        }
+
+        private void button43_Click(object sender, EventArgs e)
+        {
+            var res = weChatThread.Wx_ExtDeviceLoginGet(txt_orderUrl.Text);
+            txt_qrcodeLog.Text = res.ConvertToString();
+        }
+
+        private void button44_Click(object sender, EventArgs e)
+        {
+            var res = weChatThread.Wx_ExtDeviceLoginOK(txt_orderUrl.Text);
+            txt_qrcodeLog.Text = res.ConvertToString();
+        }
     }
 }

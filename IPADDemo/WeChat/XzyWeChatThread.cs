@@ -506,7 +506,7 @@ namespace IPADDemo.WeChat
                 string uid = UUID;
                 var mac = Mac;
 
-                var key = string.Format(@"<softtype><k3>11.0.1</k3><k9>iPad</k9><k10>2</k10><k19>58BF17B5-2D8E-4BFB-A97E-38F1226F13F8</k19><k20>{0}</k20><k21>neihe_5GHz</k21><k22>(null)</k22><k24>{1}</k24><k33>\345\276\256\344\277\241</k33><k47>1</k47><k50>1</k50><k51>com.tencent.xin</k51><k54>iPad4,4</k54></softtype>", UUID, Mac);
+                var key = string.Format($@"<softtype><k3>11.0.1</k3><k9>iPad</k9><k10>2</k10><k19>{Guid.NewGuid()}</k19><k20>{0}</k20><k21>neihe_5GHz</k21><k22>(null)</k22><k24>{1}</k24><k33>\345\276\256\344\277\241</k33><k47>1</k47><k50>1</k50><k51>com.tencent.xin</k51><k54>iPad5,5</k54></softtype>", UUID, Mac);
 
                 XzyWxApis.WXInitialize((int)WxUser1, "xzyIPAD", key, UUID);
 
@@ -1613,6 +1613,78 @@ namespace IPADDemo.WeChat
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
                 XzyWxApis.WXGetLoginToken(pointerWxUser, (int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 设置微信id
+        /// </summary>
+        /// <param name="wxid"></param>
+        /// <returns></returns>
+        public unsafe string Wx_SetWeChatID(string wxid)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXSetWeChatID(pointerWxUser, wxid,(int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 获取本地二维码信息
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public unsafe string Wx_QRCodeDecode(string path)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXQRCodeDecode(pointerWxUser, path, (int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 获取其他设备登陆请求
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public unsafe string Wx_ExtDeviceLoginGet(string url)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXExtDeviceLoginGet(pointerWxUser, url, (int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 确认其他设备登陆请求
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public unsafe string Wx_ExtDeviceLoginOK(string url)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXExtDeviceLoginOK(pointerWxUser, url, (int)msgptr1);
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 result = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);

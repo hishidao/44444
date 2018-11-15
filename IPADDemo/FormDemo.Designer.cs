@@ -174,6 +174,18 @@
             this.label34 = new System.Windows.Forms.Label();
             this.button29 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.txt_setWxid = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.button41 = new System.Windows.Forms.Button();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.button42 = new System.Windows.Forms.Button();
+            this.txt_qrcodeLog = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.txt_orderUrl = new System.Windows.Forms.TextBox();
+            this.button43 = new System.Windows.Forms.Button();
+            this.button44 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -186,6 +198,8 @@
             this.tabPage7.SuspendLayout();
             this.tabPage9.SuspendLayout();
             this.tabPage10.SuspendLayout();
+            this.tabPage11.SuspendLayout();
+            this.tabPage12.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -226,6 +240,8 @@
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage10);
+            this.tabControl1.Controls.Add(this.tabPage11);
+            this.tabControl1.Controls.Add(this.tabPage12);
             this.tabControl1.Location = new System.Drawing.Point(223, 13);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1626,6 +1642,125 @@
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
+            // tabPage11
+            // 
+            this.tabPage11.Controls.Add(this.button41);
+            this.tabPage11.Controls.Add(this.label44);
+            this.tabPage11.Controls.Add(this.txt_setWxid);
+            this.tabPage11.Location = new System.Drawing.Point(4, 25);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage11.Size = new System.Drawing.Size(765, 396);
+            this.tabPage11.TabIndex = 11;
+            this.tabPage11.Text = "个人信息";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // txt_setWxid
+            // 
+            this.txt_setWxid.Location = new System.Drawing.Point(123, 25);
+            this.txt_setWxid.Name = "txt_setWxid";
+            this.txt_setWxid.Size = new System.Drawing.Size(220, 25);
+            this.txt_setWxid.TabIndex = 0;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(22, 28);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(98, 15);
+            this.label44.TabIndex = 1;
+            this.label44.Text = "设置微信id：";
+            // 
+            // button41
+            // 
+            this.button41.Location = new System.Drawing.Point(358, 24);
+            this.button41.Name = "button41";
+            this.button41.Size = new System.Drawing.Size(95, 26);
+            this.button41.TabIndex = 2;
+            this.button41.Text = "设置";
+            this.button41.UseVisualStyleBackColor = true;
+            this.button41.Click += new System.EventHandler(this.button41_Click);
+            // 
+            // tabPage12
+            // 
+            this.tabPage12.Controls.Add(this.button44);
+            this.tabPage12.Controls.Add(this.button43);
+            this.tabPage12.Controls.Add(this.txt_orderUrl);
+            this.tabPage12.Controls.Add(this.label46);
+            this.tabPage12.Controls.Add(this.label45);
+            this.tabPage12.Controls.Add(this.txt_qrcodeLog);
+            this.tabPage12.Controls.Add(this.button42);
+            this.tabPage12.Location = new System.Drawing.Point(4, 25);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage12.Size = new System.Drawing.Size(765, 396);
+            this.tabPage12.TabIndex = 12;
+            this.tabPage12.Text = "其他设备登录";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // button42
+            // 
+            this.button42.Location = new System.Drawing.Point(21, 16);
+            this.button42.Name = "button42";
+            this.button42.Size = new System.Drawing.Size(145, 36);
+            this.button42.TabIndex = 0;
+            this.button42.Text = "获取二维码信息";
+            this.button42.UseVisualStyleBackColor = true;
+            this.button42.Click += new System.EventHandler(this.button42_Click);
+            // 
+            // txt_qrcodeLog
+            // 
+            this.txt_qrcodeLog.Location = new System.Drawing.Point(7, 198);
+            this.txt_qrcodeLog.Multiline = true;
+            this.txt_qrcodeLog.Name = "txt_qrcodeLog";
+            this.txt_qrcodeLog.Size = new System.Drawing.Size(752, 192);
+            this.txt_qrcodeLog.TabIndex = 1;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(183, 27);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(523, 15);
+            this.label45.TabIndex = 2;
+            this.label45.Text = "使用账号密码+62登录后 可以打开pc或web端的二维码获取URL后登录其他终端";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(21, 74);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(39, 15);
+            this.label46.TabIndex = 3;
+            this.label46.Text = "url:";
+            // 
+            // txt_orderUrl
+            // 
+            this.txt_orderUrl.Location = new System.Drawing.Point(66, 71);
+            this.txt_orderUrl.Name = "txt_orderUrl";
+            this.txt_orderUrl.Size = new System.Drawing.Size(319, 25);
+            this.txt_orderUrl.TabIndex = 4;
+            // 
+            // button43
+            // 
+            this.button43.Location = new System.Drawing.Point(404, 70);
+            this.button43.Name = "button43";
+            this.button43.Size = new System.Drawing.Size(113, 35);
+            this.button43.TabIndex = 5;
+            this.button43.Text = "登录";
+            this.button43.UseVisualStyleBackColor = true;
+            this.button43.Click += new System.EventHandler(this.button43_Click);
+            // 
+            // button44
+            // 
+            this.button44.Location = new System.Drawing.Point(404, 124);
+            this.button44.Name = "button44";
+            this.button44.Size = new System.Drawing.Size(113, 36);
+            this.button44.TabIndex = 6;
+            this.button44.Text = "确认登录";
+            this.button44.UseVisualStyleBackColor = true;
+            this.button44.Click += new System.EventHandler(this.button44_Click);
+            // 
             // FormDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1664,6 +1799,10 @@
             this.tabPage9.PerformLayout();
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
+            this.tabPage11.ResumeLayout(false);
+            this.tabPage11.PerformLayout();
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage12.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1816,5 +1955,17 @@
         private System.Windows.Forms.TextBox txt_gzhUin;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Button button40;
+        private System.Windows.Forms.TabPage tabPage11;
+        private System.Windows.Forms.Button button41;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox txt_setWxid;
+        private System.Windows.Forms.TabPage tabPage12;
+        private System.Windows.Forms.Button button42;
+        private System.Windows.Forms.TextBox txt_qrcodeLog;
+        private System.Windows.Forms.Button button43;
+        private System.Windows.Forms.TextBox txt_orderUrl;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Button button44;
     }
 }

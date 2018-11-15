@@ -294,6 +294,11 @@ namespace IPADDemo
             txt_gzhlog.Text = weChatThread.GetSubscriptionInfo(txt_gzhid.Text);
         }
 
+        private void button40_Click(object sender, EventArgs e)
+        {
+            txt_gzhlog.Text = weChatThread.Wx_SubscriptionCommand(txt_gzhid.Text, uint.Parse(txt_gzhUin.Text), txt_gzhKey.Text);
+        }
+
         private void button25_Click(object sender, EventArgs e)
         {
             string str = weChatThread.Wx_GetContactLabelList();
@@ -362,6 +367,5 @@ namespace IPADDemo
             var res = weChatThread.Wx_DeleteUser(txt_friendwxid.Text);
         }
 
-        
     }
 }

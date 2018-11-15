@@ -1681,12 +1681,37 @@ namespace IPADDemo.WeChat
             return result;
         }
 
+        /// <summary>
+        /// 获取公众号菜单
+        /// </summary>
+        /// <param name="gzhid"></param>
+        /// <returns></returns>
         public unsafe string GetSubscriptionInfo(string gzhid)
         {
             var result = "";
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
                 XzyWxApis.WXGetSubscriptionInfo(pointerWxUser, gzhid, (int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 执行公众号菜单
+        /// </summary>
+        /// <param name="wxid">公众号用户名gh* 开头的</param>
+        /// <param name="uin">通过WXGetSubscriptionInfo获取</param>
+        /// <param name="key">通过WXGetSubscriptionInfo获取</param>
+        /// <returns></returns>
+        public unsafe string Wx_SubscriptionCommand(string wxid,uint uin,string key)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXSubscriptionCommand(pointerWxUser, wxid,uin,key ,(int)msgptr1);
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 result = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);

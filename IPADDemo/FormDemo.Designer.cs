@@ -84,6 +84,8 @@
             this.lb_friend = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button39 = new System.Windows.Forms.Button();
+            this.button38 = new System.Windows.Forms.Button();
             this.lb_group = new System.Windows.Forms.ListBox();
             this.label29 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
@@ -133,6 +135,11 @@
             this.txt_Lat = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.button40 = new System.Windows.Forms.Button();
+            this.txt_gzhKey = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txt_gzhUin = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
             this.lb_gzh = new System.Windows.Forms.ListBox();
             this.button22 = new System.Windows.Forms.Button();
             this.txt_gzhlog = new System.Windows.Forms.TextBox();
@@ -167,8 +174,6 @@
             this.label34 = new System.Windows.Forms.Label();
             this.button29 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.button38 = new System.Windows.Forms.Button();
-            this.button39 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -748,6 +753,26 @@
             this.tabPage4.Text = "群模块";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button39
+            // 
+            this.button39.Location = new System.Drawing.Point(445, 67);
+            this.button39.Name = "button39";
+            this.button39.Size = new System.Drawing.Size(148, 25);
+            this.button39.TabIndex = 20;
+            this.button39.Text = "获取群成员资料";
+            this.button39.UseVisualStyleBackColor = true;
+            this.button39.Click += new System.EventHandler(this.button39_Click);
+            // 
+            // button38
+            // 
+            this.button38.Location = new System.Drawing.Point(393, 108);
+            this.button38.Name = "button38";
+            this.button38.Size = new System.Drawing.Size(124, 25);
+            this.button38.TabIndex = 19;
+            this.button38.Text = "邀请群成员";
+            this.button38.UseVisualStyleBackColor = true;
+            this.button38.Click += new System.EventHandler(this.button38_Click);
+            // 
             // lb_group
             // 
             this.lb_group.FormattingEnabled = true;
@@ -1216,6 +1241,11 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.button40);
+            this.tabPage8.Controls.Add(this.txt_gzhKey);
+            this.tabPage8.Controls.Add(this.label43);
+            this.tabPage8.Controls.Add(this.txt_gzhUin);
+            this.tabPage8.Controls.Add(this.label42);
             this.tabPage8.Controls.Add(this.lb_gzh);
             this.tabPage8.Controls.Add(this.button22);
             this.tabPage8.Controls.Add(this.txt_gzhlog);
@@ -1229,6 +1259,48 @@
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "公众号";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // button40
+            // 
+            this.button40.Location = new System.Drawing.Point(375, 154);
+            this.button40.Name = "button40";
+            this.button40.Size = new System.Drawing.Size(138, 39);
+            this.button40.TabIndex = 10;
+            this.button40.Text = "执行公众号菜单";
+            this.button40.UseVisualStyleBackColor = true;
+            this.button40.Click += new System.EventHandler(this.button40_Click);
+            // 
+            // txt_gzhKey
+            // 
+            this.txt_gzhKey.Location = new System.Drawing.Point(375, 110);
+            this.txt_gzhKey.Name = "txt_gzhKey";
+            this.txt_gzhKey.Size = new System.Drawing.Size(198, 25);
+            this.txt_gzhKey.TabIndex = 9;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(322, 113);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(47, 15);
+            this.label43.TabIndex = 8;
+            this.label43.Text = "key: ";
+            // 
+            // txt_gzhUin
+            // 
+            this.txt_gzhUin.Location = new System.Drawing.Point(375, 62);
+            this.txt_gzhUin.Name = "txt_gzhUin";
+            this.txt_gzhUin.Size = new System.Drawing.Size(198, 25);
+            this.txt_gzhUin.TabIndex = 7;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(322, 65);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(47, 15);
+            this.label42.TabIndex = 6;
+            this.label42.Text = "uin: ";
             // 
             // lb_gzh
             // 
@@ -1554,26 +1626,6 @@
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // button38
-            // 
-            this.button38.Location = new System.Drawing.Point(393, 108);
-            this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(124, 25);
-            this.button38.TabIndex = 19;
-            this.button38.Text = "邀请群成员";
-            this.button38.UseVisualStyleBackColor = true;
-            this.button38.Click += new System.EventHandler(this.button38_Click);
-            // 
-            // button39
-            // 
-            this.button39.Location = new System.Drawing.Point(445, 67);
-            this.button39.Name = "button39";
-            this.button39.Size = new System.Drawing.Size(148, 25);
-            this.button39.TabIndex = 20;
-            this.button39.Text = "获取群成员资料";
-            this.button39.UseVisualStyleBackColor = true;
-            this.button39.Click += new System.EventHandler(this.button39_Click);
-            // 
             // FormDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1759,5 +1811,10 @@
         private System.Windows.Forms.Button button37;
         private System.Windows.Forms.Button button38;
         private System.Windows.Forms.Button button39;
+        private System.Windows.Forms.TextBox txt_gzhKey;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txt_gzhUin;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Button button40;
     }
 }

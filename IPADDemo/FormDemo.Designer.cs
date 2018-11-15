@@ -186,6 +186,9 @@
             this.txt_orderUrl = new System.Windows.Forms.TextBox();
             this.button43 = new System.Windows.Forms.Button();
             this.button44 = new System.Windows.Forms.Button();
+            this.txt_gzhUrl = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.button45 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1257,6 +1260,9 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.button45);
+            this.tabPage8.Controls.Add(this.txt_gzhUrl);
+            this.tabPage8.Controls.Add(this.label47);
             this.tabPage8.Controls.Add(this.button40);
             this.tabPage8.Controls.Add(this.txt_gzhKey);
             this.tabPage8.Controls.Add(this.label43);
@@ -1278,7 +1284,7 @@
             // 
             // button40
             // 
-            this.button40.Location = new System.Drawing.Point(375, 154);
+            this.button40.Location = new System.Drawing.Point(594, 77);
             this.button40.Name = "button40";
             this.button40.Size = new System.Drawing.Size(138, 39);
             this.button40.TabIndex = 10;
@@ -1761,6 +1767,32 @@
             this.button44.UseVisualStyleBackColor = true;
             this.button44.Click += new System.EventHandler(this.button44_Click);
             // 
+            // txt_gzhUrl
+            // 
+            this.txt_gzhUrl.Location = new System.Drawing.Point(375, 168);
+            this.txt_gzhUrl.Name = "txt_gzhUrl";
+            this.txt_gzhUrl.Size = new System.Drawing.Size(198, 25);
+            this.txt_gzhUrl.TabIndex = 12;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(322, 171);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(47, 15);
+            this.label47.TabIndex = 11;
+            this.label47.Text = "url: ";
+            // 
+            // button45
+            // 
+            this.button45.Location = new System.Drawing.Point(594, 168);
+            this.button45.Name = "button45";
+            this.button45.Size = new System.Drawing.Size(121, 25);
+            this.button45.TabIndex = 13;
+            this.button45.Text = "阅读";
+            this.button45.UseVisualStyleBackColor = true;
+            this.button45.Click += new System.EventHandler(this.button45_Click);
+            // 
             // FormDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1967,5 +1999,8 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Button button44;
+        private System.Windows.Forms.TextBox txt_gzhUrl;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Button button45;
     }
 }

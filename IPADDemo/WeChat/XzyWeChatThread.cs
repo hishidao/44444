@@ -1792,6 +1792,26 @@ namespace IPADDemo.WeChat
         }
 
         /// <summary>
+        /// 阅读链接
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="uin"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public unsafe string Wx_RequestUrl(string url, string uin, string key)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXRequestUrl(pointerWxUser, url, key, uin, (int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 后期所有标签
         /// </summary>
         /// <returns></returns>

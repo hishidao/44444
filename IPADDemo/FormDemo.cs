@@ -299,6 +299,11 @@ namespace IPADDemo
             txt_gzhlog.Text = weChatThread.Wx_SubscriptionCommand(txt_gzhid.Text, uint.Parse(txt_gzhUin.Text), txt_gzhKey.Text);
         }
 
+        private void button45_Click(object sender, EventArgs e)
+        {
+            txt_gzhlog.Text = weChatThread.Wx_RequestUrl(txt_gzhUrl.Text, txt_gzhUin.Text, txt_gzhKey.Text);
+        }
+
         private void button25_Click(object sender, EventArgs e)
         {
             string str = weChatThread.Wx_GetContactLabelList();
@@ -399,5 +404,7 @@ namespace IPADDemo
             var res = weChatThread.Wx_ExtDeviceLoginOK(txt_orderUrl.Text);
             txt_qrcodeLog.Text = res.ConvertToString();
         }
+
+       
     }
 }

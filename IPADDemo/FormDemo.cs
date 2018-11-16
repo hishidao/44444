@@ -345,16 +345,19 @@ namespace IPADDemo
         private void button32_Click(object sender, EventArgs e)
         {
             var res = weChatThread.Wx_SnsUserPage(txt_snswxid.Text,"");
+            txt_snsLog.Text = res.ConvertToString();
         }
 
         private void button33_Click(object sender, EventArgs e)
         {
             var res = weChatThread.Wx_SnsObjectDetail(txt_snsId.Text);
+            txt_snsLog.Text = res.ConvertToString();
         }
 
         private void button34_Click(object sender, EventArgs e)
         {
             var res = weChatThread.Wx_SnsComment(txt_snsId.Text, Encoding.Default.GetString(Encoding.UTF8.GetBytes(txt_snsContext.Text)), txt_snsPlId.Text.ConvertToInt32());
+            txt_snsLog.Text = res.ConvertToString();
         }
 
         private void button35_Click(object sender, EventArgs e)
@@ -405,6 +408,10 @@ namespace IPADDemo
             txt_qrcodeLog.Text = res.ConvertToString();
         }
 
-       
+        private void button46_Click(object sender, EventArgs e)
+        {
+            var res = weChatThread.Wx_SetUserInfo(txt_setNickName.Text,txt_setSign.Text,txt_setSex.Text.ConvertToInt32(),txt_setCountry.Text,txt_setProvincia.Text,txt_setCity.Text);
+
+        }
     }
 }

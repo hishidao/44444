@@ -1693,6 +1693,29 @@ namespace IPADDemo.WeChat
         }
 
         /// <summary>
+        /// 设置用户资料
+        /// </summary>
+        /// <param name="nick_name"></param>
+        /// <param name="unsigned"></param>
+        /// <param name="sex"></param>
+        /// <param name="country"></param>
+        /// <param name="provincia"></param>
+        /// <param name="city"></param>
+        /// <returns></returns>
+        public unsafe string Wx_SetUserInfo(string nick_name, string unsigned, int sex, string country, string provincia, string city)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXSetUserInfo(pointerWxUser, nick_name, unsigned,sex,country,provincia,city,(int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 获取62数据
         /// </summary>
         /// <returns></returns>

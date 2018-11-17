@@ -78,7 +78,7 @@ namespace IPADDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            weChatThread.Wx_SendMsg(txt_msgWxid.Text, txt_msgText.Text);
+            var res=weChatThread.Wx_SendMsg(txt_msgWxid.Text, txt_msgText.Text);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -360,6 +360,14 @@ namespace IPADDemo
             txt_snsLog.Text = res.ConvertToString();
         }
 
+
+        private void button48_Click(object sender, EventArgs e)
+        {
+            var res = weChatThread.Wx_SnsTimeline("");
+            txt_snsLog.Text = res.ConvertToString();
+        }
+
+
         private void button35_Click(object sender, EventArgs e)
         {
             var res = weChatThread.Wx_GetContact(txt_friendwxid.Text);
@@ -413,5 +421,13 @@ namespace IPADDemo
             var res = weChatThread.Wx_SetUserInfo(txt_setNickName.Text,txt_setSign.Text,txt_setSex.Text.ConvertToInt32(),txt_setCountry.Text,txt_setProvincia.Text,txt_setCity.Text);
 
         }
+
+        private void button47_Click(object sender, EventArgs e)
+        {
+            var res = weChatThread.Wx_SearchContact(txt_addUserInfo.Text);
+            txt_positionReturn.Text = res.ToString();
+        }
+
+       
     }
 }

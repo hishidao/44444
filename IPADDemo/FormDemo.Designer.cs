@@ -56,6 +56,8 @@
             this.txt_msgWxid = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button48 = new System.Windows.Forms.Button();
+            this.txt_snsLog = new System.Windows.Forms.TextBox();
             this.txt_snsContext = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.button34 = new System.Windows.Forms.Button();
@@ -119,6 +121,9 @@
             this.txt_loginName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.button47 = new System.Windows.Forms.Button();
+            this.txt_addUserInfo = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
             this.button16 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.cb_addtype = new System.Windows.Forms.ComboBox();
@@ -177,6 +182,20 @@
             this.label34 = new System.Windows.Forms.Label();
             this.button29 = new System.Windows.Forms.Button();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.button46 = new System.Windows.Forms.Button();
+            this.label54 = new System.Windows.Forms.Label();
+            this.txt_setCity = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.txt_setProvincia = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.txt_setCountry = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.txt_setSex = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.txt_setSign = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.txt_setNickName = new System.Windows.Forms.TextBox();
             this.button41 = new System.Windows.Forms.Button();
             this.label44 = new System.Windows.Forms.Label();
             this.txt_setWxid = new System.Windows.Forms.TextBox();
@@ -189,21 +208,6 @@
             this.txt_qrcodeLog = new System.Windows.Forms.TextBox();
             this.button42 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.txt_snsLog = new System.Windows.Forms.TextBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.txt_setNickName = new System.Windows.Forms.TextBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.txt_setSign = new System.Windows.Forms.TextBox();
-            this.label50 = new System.Windows.Forms.Label();
-            this.txt_setSex = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.txt_setCountry = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.txt_setProvincia = new System.Windows.Forms.TextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.txt_setCity = new System.Windows.Forms.TextBox();
-            this.button46 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -483,6 +487,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button48);
             this.tabPage2.Controls.Add(this.txt_snsLog);
             this.tabPage2.Controls.Add(this.txt_snsContext);
             this.tabPage2.Controls.Add(this.label40);
@@ -509,6 +514,24 @@
             this.tabPage2.Text = "朋友圈模块";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button48
+            // 
+            this.button48.Location = new System.Drawing.Point(275, 154);
+            this.button48.Name = "button48";
+            this.button48.Size = new System.Drawing.Size(129, 39);
+            this.button48.TabIndex = 18;
+            this.button48.Text = "查看所有朋友圈";
+            this.button48.UseVisualStyleBackColor = true;
+            this.button48.Click += new System.EventHandler(this.button48_Click);
+            // 
+            // txt_snsLog
+            // 
+            this.txt_snsLog.Location = new System.Drawing.Point(275, 210);
+            this.txt_snsLog.Multiline = true;
+            this.txt_snsLog.Name = "txt_snsLog";
+            this.txt_snsLog.Size = new System.Drawing.Size(484, 135);
+            this.txt_snsLog.TabIndex = 17;
+            // 
             // txt_snsContext
             // 
             this.txt_snsContext.Location = new System.Drawing.Point(489, 151);
@@ -519,7 +542,7 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(401, 154);
+            this.label40.Location = new System.Drawing.Point(410, 154);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(82, 15);
             this.label40.TabIndex = 15;
@@ -1108,6 +1131,9 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.button47);
+            this.tabPage6.Controls.Add(this.txt_addUserInfo);
+            this.tabPage6.Controls.Add(this.label55);
             this.tabPage6.Controls.Add(this.button16);
             this.tabPage6.Controls.Add(this.label21);
             this.tabPage6.Controls.Add(this.cb_addtype);
@@ -1128,12 +1154,38 @@
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(765, 396);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "附近的人";
+            this.tabPage6.Text = "加粉引流";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // button47
+            // 
+            this.button47.Location = new System.Drawing.Point(371, 301);
+            this.button47.Name = "button47";
+            this.button47.Size = new System.Drawing.Size(106, 27);
+            this.button47.TabIndex = 17;
+            this.button47.Text = "搜索";
+            this.button47.UseVisualStyleBackColor = true;
+            this.button47.Click += new System.EventHandler(this.button47_Click);
+            // 
+            // txt_addUserInfo
+            // 
+            this.txt_addUserInfo.Location = new System.Drawing.Point(167, 303);
+            this.txt_addUserInfo.Name = "txt_addUserInfo";
+            this.txt_addUserInfo.Size = new System.Drawing.Size(179, 25);
+            this.txt_addUserInfo.TabIndex = 16;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(33, 306);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(136, 15);
+            this.label55.TabIndex = 15;
+            this.label55.Text = "微信号手机号QQ号:";
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(33, 295);
+            this.button16.Location = new System.Drawing.Point(643, 295);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(90, 41);
             this.button16.TabIndex = 14;
@@ -1707,6 +1759,127 @@
             this.tabPage11.Text = "个人信息";
             this.tabPage11.UseVisualStyleBackColor = true;
             // 
+            // button46
+            // 
+            this.button46.Location = new System.Drawing.Point(370, 311);
+            this.button46.Name = "button46";
+            this.button46.Size = new System.Drawing.Size(98, 25);
+            this.button46.TabIndex = 16;
+            this.button46.Text = "设置资料";
+            this.button46.UseVisualStyleBackColor = true;
+            this.button46.Click += new System.EventHandler(this.button46_Click);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(65, 314);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(52, 15);
+            this.label54.TabIndex = 15;
+            this.label54.Text = "城市：";
+            // 
+            // txt_setCity
+            // 
+            this.txt_setCity.Location = new System.Drawing.Point(123, 311);
+            this.txt_setCity.Name = "txt_setCity";
+            this.txt_setCity.Size = new System.Drawing.Size(220, 25);
+            this.txt_setCity.TabIndex = 14;
+            this.txt_setCity.Text = "guangzhou";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(65, 267);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(52, 15);
+            this.label53.TabIndex = 13;
+            this.label53.Text = "省份：";
+            // 
+            // txt_setProvincia
+            // 
+            this.txt_setProvincia.Location = new System.Drawing.Point(123, 264);
+            this.txt_setProvincia.Name = "txt_setProvincia";
+            this.txt_setProvincia.Size = new System.Drawing.Size(220, 25);
+            this.txt_setProvincia.TabIndex = 12;
+            this.txt_setProvincia.Text = "guangdong";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(65, 223);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(52, 15);
+            this.label52.TabIndex = 11;
+            this.label52.Text = "国籍：";
+            // 
+            // txt_setCountry
+            // 
+            this.txt_setCountry.Location = new System.Drawing.Point(123, 220);
+            this.txt_setCountry.Name = "txt_setCountry";
+            this.txt_setCountry.Size = new System.Drawing.Size(220, 25);
+            this.txt_setCountry.TabIndex = 10;
+            this.txt_setCountry.Text = "CN";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(367, 178);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(38, 15);
+            this.label51.TabIndex = 9;
+            this.label51.Text = "0或1";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(65, 178);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(52, 15);
+            this.label50.TabIndex = 8;
+            this.label50.Text = "性别：";
+            // 
+            // txt_setSex
+            // 
+            this.txt_setSex.Location = new System.Drawing.Point(123, 175);
+            this.txt_setSex.Name = "txt_setSex";
+            this.txt_setSex.Size = new System.Drawing.Size(220, 25);
+            this.txt_setSex.TabIndex = 7;
+            this.txt_setSex.Text = "1";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(65, 127);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(52, 15);
+            this.label49.TabIndex = 6;
+            this.label49.Text = "签名：";
+            // 
+            // txt_setSign
+            // 
+            this.txt_setSign.Location = new System.Drawing.Point(123, 124);
+            this.txt_setSign.Name = "txt_setSign";
+            this.txt_setSign.Size = new System.Drawing.Size(220, 25);
+            this.txt_setSign.TabIndex = 5;
+            this.txt_setSign.Text = "微信协议看：https://github.com/changtuiqie/Mac.WeChat";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(65, 74);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(52, 15);
+            this.label48.TabIndex = 4;
+            this.label48.Text = "昵称：";
+            // 
+            // txt_setNickName
+            // 
+            this.txt_setNickName.Location = new System.Drawing.Point(123, 71);
+            this.txt_setNickName.Name = "txt_setNickName";
+            this.txt_setNickName.Size = new System.Drawing.Size(220, 25);
+            this.txt_setNickName.TabIndex = 3;
+            this.txt_setNickName.Text = "MacWeChat";
+            // 
             // button41
             // 
             this.button41.Location = new System.Drawing.Point(358, 24);
@@ -1822,135 +1995,6 @@
             this.button14.Text = "扫码登录";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // txt_snsLog
-            // 
-            this.txt_snsLog.Location = new System.Drawing.Point(275, 210);
-            this.txt_snsLog.Multiline = true;
-            this.txt_snsLog.Name = "txt_snsLog";
-            this.txt_snsLog.Size = new System.Drawing.Size(484, 135);
-            this.txt_snsLog.TabIndex = 17;
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(65, 74);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(52, 15);
-            this.label48.TabIndex = 4;
-            this.label48.Text = "昵称：";
-            // 
-            // txt_setNickName
-            // 
-            this.txt_setNickName.Location = new System.Drawing.Point(123, 71);
-            this.txt_setNickName.Name = "txt_setNickName";
-            this.txt_setNickName.Size = new System.Drawing.Size(220, 25);
-            this.txt_setNickName.TabIndex = 3;
-            this.txt_setNickName.Text = "MacWeChat";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(65, 127);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(52, 15);
-            this.label49.TabIndex = 6;
-            this.label49.Text = "签名：";
-            // 
-            // txt_setSign
-            // 
-            this.txt_setSign.Location = new System.Drawing.Point(123, 124);
-            this.txt_setSign.Name = "txt_setSign";
-            this.txt_setSign.Size = new System.Drawing.Size(220, 25);
-            this.txt_setSign.TabIndex = 5;
-            this.txt_setSign.Text = "微信协议看：https://github.com/changtuiqie/Mac.WeChat";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(65, 178);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(52, 15);
-            this.label50.TabIndex = 8;
-            this.label50.Text = "性别：";
-            // 
-            // txt_setSex
-            // 
-            this.txt_setSex.Location = new System.Drawing.Point(123, 175);
-            this.txt_setSex.Name = "txt_setSex";
-            this.txt_setSex.Size = new System.Drawing.Size(220, 25);
-            this.txt_setSex.TabIndex = 7;
-            this.txt_setSex.Text = "1";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(367, 178);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(38, 15);
-            this.label51.TabIndex = 9;
-            this.label51.Text = "0或1";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(65, 223);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(52, 15);
-            this.label52.TabIndex = 11;
-            this.label52.Text = "国籍：";
-            // 
-            // txt_setCountry
-            // 
-            this.txt_setCountry.Location = new System.Drawing.Point(123, 220);
-            this.txt_setCountry.Name = "txt_setCountry";
-            this.txt_setCountry.Size = new System.Drawing.Size(220, 25);
-            this.txt_setCountry.TabIndex = 10;
-            this.txt_setCountry.Text = "CN";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(65, 267);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(52, 15);
-            this.label53.TabIndex = 13;
-            this.label53.Text = "省份：";
-            // 
-            // txt_setProvincia
-            // 
-            this.txt_setProvincia.Location = new System.Drawing.Point(123, 264);
-            this.txt_setProvincia.Name = "txt_setProvincia";
-            this.txt_setProvincia.Size = new System.Drawing.Size(220, 25);
-            this.txt_setProvincia.TabIndex = 12;
-            this.txt_setProvincia.Text = "guangdong";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(65, 314);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(52, 15);
-            this.label54.TabIndex = 15;
-            this.label54.Text = "城市：";
-            // 
-            // txt_setCity
-            // 
-            this.txt_setCity.Location = new System.Drawing.Point(123, 311);
-            this.txt_setCity.Name = "txt_setCity";
-            this.txt_setCity.Size = new System.Drawing.Size(220, 25);
-            this.txt_setCity.TabIndex = 14;
-            this.txt_setCity.Text = "guangzhou";
-            // 
-            // button46
-            // 
-            this.button46.Location = new System.Drawing.Point(370, 311);
-            this.button46.Name = "button46";
-            this.button46.Size = new System.Drawing.Size(98, 25);
-            this.button46.TabIndex = 16;
-            this.button46.Text = "设置资料";
-            this.button46.UseVisualStyleBackColor = true;
-            this.button46.Click += new System.EventHandler(this.button46_Click);
             // 
             // FormDemo
             // 
@@ -2177,5 +2221,9 @@
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.TextBox txt_setCountry;
         private System.Windows.Forms.Button button46;
+        private System.Windows.Forms.Button button47;
+        private System.Windows.Forms.TextBox txt_addUserInfo;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Button button48;
     }
 }

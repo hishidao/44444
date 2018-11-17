@@ -181,3 +181,4 @@ C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.csproj.CoreCompi
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.csproj.CopyComplete
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.exe
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.pdb
+C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\bin\Debug\Xzy.IPAD.Core.pdb

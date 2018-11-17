@@ -18,6 +18,7 @@ using IPADDemo.Util;
 using System.Configuration;
 using System.Text.RegularExpressions;
 using IPADDemo.AppData;
+using Xzy.IPAD.Core;
 
 namespace IPADDemo.WeChat
 {
@@ -689,7 +690,7 @@ namespace IPADDemo.WeChat
         /// </summary>
         /// <param name="wxid"></param>
         /// <param name="content"></param>
-        public unsafe void Wx_SendMsg(string wxid, string content)
+        public unsafe string Wx_SendMsg(string wxid, string content)
         {
             WxDelegate.show(string.Format("发送文字： {0}", content));
             content = content.Replace(" ", "\r\n");
@@ -699,6 +700,7 @@ namespace IPADDemo.WeChat
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 var str = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);
+                return str;
             }
         }
 
@@ -1339,6 +1341,24 @@ namespace IPADDemo.WeChat
         }
 
         /// <summary>
+        /// 查看朋友圈 ID第一次传空
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public unsafe string Wx_SnsTimeline(string id)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXSnsTimeline(pointerWxUser, id, (int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 删除评论、点赞
         /// </summary>
         /// <param name="snsid"></param>
@@ -1708,6 +1728,24 @@ namespace IPADDemo.WeChat
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
                 XzyWxApis.WXSetUserInfo(pointerWxUser, nick_name, unsigned,sex,country,provincia,city,(int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 搜索用户信息
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public unsafe string Wx_SearchContact(string user)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXSearchContact(pointerWxUser, user,(int)msgptr1);
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 result = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);

@@ -208,6 +208,10 @@
             this.txt_qrcodeLog = new System.Windows.Forms.TextBox();
             this.button42 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+            this.button49 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -264,7 +268,7 @@
             this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Controls.Add(this.tabPage11);
             this.tabControl1.Controls.Add(this.tabPage12);
-            this.tabControl1.Location = new System.Drawing.Point(223, 13);
+            this.tabControl1.Location = new System.Drawing.Point(224, 13);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(773, 425);
@@ -272,6 +276,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button49);
+            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.label57);
             this.tabPage1.Controls.Add(this.button24);
             this.tabPage1.Controls.Add(this.txt_linkImgUrl);
             this.tabPage1.Controls.Add(this.label28);
@@ -445,7 +453,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(485, 59);
+            this.button1.Location = new System.Drawing.Point(334, 59);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 28);
             this.button1.TabIndex = 4;
@@ -457,7 +465,7 @@
             // 
             this.txt_msgText.Location = new System.Drawing.Point(122, 59);
             this.txt_msgText.Name = "txt_msgText";
-            this.txt_msgText.Size = new System.Drawing.Size(344, 25);
+            this.txt_msgText.Size = new System.Drawing.Size(206, 25);
             this.txt_msgText.TabIndex = 3;
             // 
             // label3
@@ -1996,6 +2004,40 @@
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
+            // button49
+            // 
+            this.button49.Location = new System.Drawing.Point(654, 59);
+            this.button49.Name = "button49";
+            this.button49.Size = new System.Drawing.Size(86, 28);
+            this.button49.TabIndex = 25;
+            this.button49.Text = "群发";
+            this.button49.UseVisualStyleBackColor = true;
+            this.button49.Click += new System.EventHandler(this.button49_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(442, 59);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(206, 25);
+            this.textBox2.TabIndex = 24;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(442, 13);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(206, 25);
+            this.textBox3.TabIndex = 22;
+            this.textBox3.Text = "[\"AB1\",\"AC2\",\"AD3\"]";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(338, 18);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(54, 15);
+            this.label57.TabIndex = 21;
+            this.label57.Text = "wxid：";
+            // 
             // FormDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -2225,5 +2267,9 @@
         private System.Windows.Forms.TextBox txt_addUserInfo;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Button button48;
+        private System.Windows.Forms.Button button49;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label57;
     }
 }

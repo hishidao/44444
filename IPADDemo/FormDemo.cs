@@ -81,6 +81,11 @@ namespace IPADDemo
             var res=weChatThread.Wx_SendMsg(txt_msgWxid.Text, txt_msgText.Text);
         }
 
+        private void button49_Click(object sender, EventArgs e)
+        {
+            var res = weChatThread.Wx_MassMessage(txt_msgWxid.Text, txt_msgText.Text);
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();

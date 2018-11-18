@@ -704,6 +704,26 @@ namespace IPADDemo.WeChat
             }
         }
 
+        /// <summary>
+        /// 群发消息
+        /// </summary>
+        /// <param name="wxid"></param>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        public unsafe string Wx_MassMessage(string wxid, string content)
+        {
+            WxDelegate.show(string.Format("发送文字： {0}", content));
+            content = content.Replace(" ", "\r\n");
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXMassMessage(pointerWxUser, wxid, content, (int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                var str = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+                return str;
+            }
+        }
+
         private int wx_imptr;
         /// <summary>
         /// 发消息 - 图片
@@ -1807,6 +1827,24 @@ namespace IPADDemo.WeChat
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
                 XzyWxApis.WXAddUser(pointerWxUser, v1, v2, type,context, (int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 公众号搜索
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public unsafe string Wx_WebSearch(string search)
+        {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXWebSearch(pointerWxUser, search, (int)msgptr1);
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 result = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);

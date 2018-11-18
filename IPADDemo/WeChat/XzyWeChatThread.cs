@@ -1332,7 +1332,7 @@ namespace IPADDemo.WeChat
             var result = "";
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
-                XzyWxApis.WXSnsComment(pointerWxUser, this.wxUser.wxid, snsid, content, replyid, (int)msgptr1);
+                msgPtr = ESnsComment(pointerWxUser, this.wxUser.wxid, snsid, content, replyid);
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 result = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);
@@ -2283,7 +2283,7 @@ namespace IPADDemo.WeChat
         public static extern int EShareCarde(int wxuser, string wxid, string fromwxid, string caption);
 
         [DllImport("EUtils.dll")]
-        public static extern int ESnsComment(int wxuser, string wxid, string snsid, string context);
+        public static extern int ESnsComment(int wxuser, string wxid, string snsid, string context,int replyid);
 
         [DllImport("EUtils.dll")]
         public static extern int EAddUser(int wxuser, string v1, string v2, int type,string context);

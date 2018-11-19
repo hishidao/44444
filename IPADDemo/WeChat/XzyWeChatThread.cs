@@ -1634,7 +1634,7 @@ namespace IPADDemo.WeChat
             var result = "";
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
-                msgPtr = EDeleteUser(pointerWxUser, wxid);
+                XzyWxApis.WXDeleteUser(pointerWxUser,wxid, (int)msgptr1);
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 result = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);
@@ -2333,10 +2333,6 @@ namespace IPADDemo.WeChat
 
         [DllImport("EUtils.dll")]
         public static extern int EAddContactLabel(int wxuser, string context);
-
-        [DllImport("EUtils.dll")]
-        public static extern int EDeleteUser(int wxuser, string wxid);
-
         #endregion
     }
 }

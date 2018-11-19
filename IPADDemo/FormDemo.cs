@@ -263,7 +263,7 @@ namespace IPADDemo
         {
             string str= weChatThread.Wx_GenerateWxDat();
             WxDat wxDat = JsonConvert.DeserializeObject<WxDat>(str);
-            txt_login62.Text = wxDat.data;
+            txt_login62.Text = EUtils.EStrToHex( wxDat.data);
         }
 
         private void button18_Click(object sender, EventArgs e)
@@ -290,7 +290,7 @@ namespace IPADDemo
 
         private void button13_Click(object sender, EventArgs e)
         {
-            weChatThread = new XzyWeChatThread(txt_login62.Text,txt_loginName.Text,txt_loginPassword.Text);
+            weChatThread = new XzyWeChatThread(EUtils.EHexToStr(txt_login62.Text),txt_loginName.Text,txt_loginPassword.Text);
         }
 
         private void button15_Click(object sender, EventArgs e)

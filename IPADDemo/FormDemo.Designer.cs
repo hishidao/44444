@@ -34,6 +34,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button49 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
             this.button24 = new System.Windows.Forms.Button();
             this.txt_linkImgUrl = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -57,7 +61,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button48 = new System.Windows.Forms.Button();
-            this.txt_snsLog = new System.Windows.Forms.TextBox();
             this.txt_snsContext = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.button34 = new System.Windows.Forms.Button();
@@ -133,7 +136,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.txt_v1 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.txt_positionReturn = new System.Windows.Forms.TextBox();
             this.button15 = new System.Windows.Forms.Button();
             this.txt_Lng = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -150,7 +152,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.lb_gzh = new System.Windows.Forms.ListBox();
             this.button22 = new System.Windows.Forms.Button();
-            this.txt_gzhlog = new System.Windows.Forms.TextBox();
             this.button21 = new System.Windows.Forms.Button();
             this.txt_gzhid = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -168,10 +169,8 @@
             this.label31 = new System.Windows.Forms.Label();
             this.txt_labelWxid = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.txt_labelList = new System.Windows.Forms.TextBox();
             this.button25 = new System.Windows.Forms.Button();
             this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.txt_favItem = new System.Windows.Forms.TextBox();
             this.txt_favId = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.button31 = new System.Windows.Forms.Button();
@@ -205,13 +204,10 @@
             this.txt_orderUrl = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.txt_qrcodeLog = new System.Windows.Forms.TextBox();
             this.button42 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.button49 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label57 = new System.Windows.Forms.Label();
+            this.txt_syslog = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -308,6 +304,40 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "消息模块";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button49
+            // 
+            this.button49.Location = new System.Drawing.Point(654, 59);
+            this.button49.Name = "button49";
+            this.button49.Size = new System.Drawing.Size(86, 28);
+            this.button49.TabIndex = 25;
+            this.button49.Text = "群发";
+            this.button49.UseVisualStyleBackColor = true;
+            this.button49.Click += new System.EventHandler(this.button49_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(442, 59);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(206, 25);
+            this.textBox2.TabIndex = 24;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(442, 13);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(206, 25);
+            this.textBox3.TabIndex = 22;
+            this.textBox3.Text = "[\"AB1\",\"AC2\",\"AD3\"]";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(338, 18);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(54, 15);
+            this.label57.TabIndex = 21;
+            this.label57.Text = "wxid：";
             // 
             // button24
             // 
@@ -496,7 +526,6 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.button48);
-            this.tabPage2.Controls.Add(this.txt_snsLog);
             this.tabPage2.Controls.Add(this.txt_snsContext);
             this.tabPage2.Controls.Add(this.label40);
             this.tabPage2.Controls.Add(this.button34);
@@ -531,14 +560,6 @@
             this.button48.Text = "查看所有朋友圈";
             this.button48.UseVisualStyleBackColor = true;
             this.button48.Click += new System.EventHandler(this.button48_Click);
-            // 
-            // txt_snsLog
-            // 
-            this.txt_snsLog.Location = new System.Drawing.Point(275, 210);
-            this.txt_snsLog.Multiline = true;
-            this.txt_snsLog.Name = "txt_snsLog";
-            this.txt_snsLog.Size = new System.Drawing.Size(484, 135);
-            this.txt_snsLog.TabIndex = 17;
             // 
             // txt_snsContext
             // 
@@ -1151,7 +1172,6 @@
             this.tabPage6.Controls.Add(this.label19);
             this.tabPage6.Controls.Add(this.txt_v1);
             this.tabPage6.Controls.Add(this.label18);
-            this.tabPage6.Controls.Add(this.txt_positionReturn);
             this.tabPage6.Controls.Add(this.button15);
             this.tabPage6.Controls.Add(this.txt_Lng);
             this.tabPage6.Controls.Add(this.label17);
@@ -1167,7 +1187,7 @@
             // 
             // button47
             // 
-            this.button47.Location = new System.Drawing.Point(371, 301);
+            this.button47.Location = new System.Drawing.Point(371, 228);
             this.button47.Name = "button47";
             this.button47.Size = new System.Drawing.Size(106, 27);
             this.button47.TabIndex = 17;
@@ -1177,7 +1197,7 @@
             // 
             // txt_addUserInfo
             // 
-            this.txt_addUserInfo.Location = new System.Drawing.Point(167, 303);
+            this.txt_addUserInfo.Location = new System.Drawing.Point(167, 230);
             this.txt_addUserInfo.Name = "txt_addUserInfo";
             this.txt_addUserInfo.Size = new System.Drawing.Size(179, 25);
             this.txt_addUserInfo.TabIndex = 16;
@@ -1185,7 +1205,7 @@
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(33, 306);
+            this.label55.Location = new System.Drawing.Point(33, 233);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(136, 15);
             this.label55.TabIndex = 15;
@@ -1193,7 +1213,7 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(643, 295);
+            this.button16.Location = new System.Drawing.Point(643, 222);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(90, 41);
             this.button16.TabIndex = 14;
@@ -1204,7 +1224,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(353, 253);
+            this.label21.Location = new System.Drawing.Point(353, 180);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(82, 15);
             this.label21.TabIndex = 13;
@@ -1229,14 +1249,14 @@
             "22-通过摇一摇打招呼方式--可以",
             "25-通过漂流瓶---no",
             "30-通过二维码方式--可以"});
-            this.cb_addtype.Location = new System.Drawing.Point(441, 252);
+            this.cb_addtype.Location = new System.Drawing.Point(441, 179);
             this.cb_addtype.Name = "cb_addtype";
             this.cb_addtype.Size = new System.Drawing.Size(274, 23);
             this.cb_addtype.TabIndex = 12;
             // 
             // txt_hellotext
             // 
-            this.txt_hellotext.Location = new System.Drawing.Point(92, 250);
+            this.txt_hellotext.Location = new System.Drawing.Point(92, 177);
             this.txt_hellotext.Name = "txt_hellotext";
             this.txt_hellotext.Size = new System.Drawing.Size(219, 25);
             this.txt_hellotext.TabIndex = 11;
@@ -1244,7 +1264,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(33, 253);
+            this.label20.Location = new System.Drawing.Point(33, 180);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(67, 15);
             this.label20.TabIndex = 10;
@@ -1252,7 +1272,7 @@
             // 
             // txt_v2
             // 
-            this.txt_v2.Location = new System.Drawing.Point(92, 210);
+            this.txt_v2.Location = new System.Drawing.Point(92, 137);
             this.txt_v2.Name = "txt_v2";
             this.txt_v2.Size = new System.Drawing.Size(653, 25);
             this.txt_v2.TabIndex = 9;
@@ -1260,7 +1280,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(33, 213);
+            this.label19.Location = new System.Drawing.Point(33, 140);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(38, 15);
             this.label19.TabIndex = 8;
@@ -1268,7 +1288,7 @@
             // 
             // txt_v1
             // 
-            this.txt_v1.Location = new System.Drawing.Point(92, 175);
+            this.txt_v1.Location = new System.Drawing.Point(92, 102);
             this.txt_v1.Name = "txt_v1";
             this.txt_v1.Size = new System.Drawing.Size(653, 25);
             this.txt_v1.TabIndex = 7;
@@ -1276,19 +1296,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(33, 178);
+            this.label18.Location = new System.Drawing.Point(33, 105);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(38, 15);
             this.label18.TabIndex = 6;
             this.label18.Text = "v1：";
-            // 
-            // txt_positionReturn
-            // 
-            this.txt_positionReturn.Location = new System.Drawing.Point(33, 60);
-            this.txt_positionReturn.Multiline = true;
-            this.txt_positionReturn.Name = "txt_positionReturn";
-            this.txt_positionReturn.Size = new System.Drawing.Size(712, 100);
-            this.txt_positionReturn.TabIndex = 5;
             // 
             // button15
             // 
@@ -1346,7 +1358,6 @@
             this.tabPage8.Controls.Add(this.label42);
             this.tabPage8.Controls.Add(this.lb_gzh);
             this.tabPage8.Controls.Add(this.button22);
-            this.tabPage8.Controls.Add(this.txt_gzhlog);
             this.tabPage8.Controls.Add(this.button21);
             this.tabPage8.Controls.Add(this.txt_gzhid);
             this.tabPage8.Controls.Add(this.label22);
@@ -1445,14 +1456,6 @@
             this.button22.UseVisualStyleBackColor = true;
             this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
-            // txt_gzhlog
-            // 
-            this.txt_gzhlog.Location = new System.Drawing.Point(6, 257);
-            this.txt_gzhlog.Multiline = true;
-            this.txt_gzhlog.Name = "txt_gzhlog";
-            this.txt_gzhlog.Size = new System.Drawing.Size(753, 133);
-            this.txt_gzhlog.TabIndex = 3;
-            // 
             // button21
             // 
             this.button21.Location = new System.Drawing.Point(422, 15);
@@ -1511,7 +1514,6 @@
             this.tabPage9.Controls.Add(this.label31);
             this.tabPage9.Controls.Add(this.txt_labelWxid);
             this.tabPage9.Controls.Add(this.label30);
-            this.tabPage9.Controls.Add(this.txt_labelList);
             this.tabPage9.Controls.Add(this.button25);
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Name = "tabPage9";
@@ -1615,14 +1617,6 @@
             this.label30.TabIndex = 2;
             this.label30.Text = "wxid:";
             // 
-            // txt_labelList
-            // 
-            this.txt_labelList.Location = new System.Drawing.Point(24, 68);
-            this.txt_labelList.Multiline = true;
-            this.txt_labelList.Name = "txt_labelList";
-            this.txt_labelList.Size = new System.Drawing.Size(198, 307);
-            this.txt_labelList.TabIndex = 1;
-            // 
             // button25
             // 
             this.button25.Location = new System.Drawing.Point(24, 21);
@@ -1635,7 +1629,6 @@
             // 
             // tabPage10
             // 
-            this.tabPage10.Controls.Add(this.txt_favItem);
             this.tabPage10.Controls.Add(this.txt_favId);
             this.tabPage10.Controls.Add(this.label36);
             this.tabPage10.Controls.Add(this.button31);
@@ -1652,14 +1645,6 @@
             this.tabPage10.TabIndex = 10;
             this.tabPage10.Text = "收藏";
             this.tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // txt_favItem
-            // 
-            this.txt_favItem.Location = new System.Drawing.Point(6, 175);
-            this.txt_favItem.Multiline = true;
-            this.txt_favItem.Name = "txt_favItem";
-            this.txt_favItem.Size = new System.Drawing.Size(753, 212);
-            this.txt_favItem.TabIndex = 9;
             // 
             // txt_favId
             // 
@@ -1921,7 +1906,6 @@
             this.tabPage12.Controls.Add(this.txt_orderUrl);
             this.tabPage12.Controls.Add(this.label46);
             this.tabPage12.Controls.Add(this.label45);
-            this.tabPage12.Controls.Add(this.txt_qrcodeLog);
             this.tabPage12.Controls.Add(this.button42);
             this.tabPage12.Location = new System.Drawing.Point(4, 25);
             this.tabPage12.Name = "tabPage12";
@@ -1976,14 +1960,6 @@
             this.label45.TabIndex = 2;
             this.label45.Text = "使用账号密码+62登录后 可以打开pc或web端的二维码获取URL后登录其他终端";
             // 
-            // txt_qrcodeLog
-            // 
-            this.txt_qrcodeLog.Location = new System.Drawing.Point(7, 198);
-            this.txt_qrcodeLog.Multiline = true;
-            this.txt_qrcodeLog.Name = "txt_qrcodeLog";
-            this.txt_qrcodeLog.Size = new System.Drawing.Size(752, 192);
-            this.txt_qrcodeLog.TabIndex = 1;
-            // 
             // button42
             // 
             this.button42.Location = new System.Drawing.Point(21, 16);
@@ -2004,45 +1980,30 @@
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // button49
+            // txt_syslog
             // 
-            this.button49.Location = new System.Drawing.Point(654, 59);
-            this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(86, 28);
-            this.button49.TabIndex = 25;
-            this.button49.Text = "群发";
-            this.button49.UseVisualStyleBackColor = true;
-            this.button49.Click += new System.EventHandler(this.button49_Click);
+            this.txt_syslog.Location = new System.Drawing.Point(15, 479);
+            this.txt_syslog.Multiline = true;
+            this.txt_syslog.Name = "txt_syslog";
+            this.txt_syslog.Size = new System.Drawing.Size(978, 143);
+            this.txt_syslog.TabIndex = 5;
             // 
-            // textBox2
+            // label56
             // 
-            this.textBox2.Location = new System.Drawing.Point(442, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 25);
-            this.textBox2.TabIndex = 24;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(442, 13);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 25);
-            this.textBox3.TabIndex = 22;
-            this.textBox3.Text = "[\"AB1\",\"AC2\",\"AD3\"]";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(338, 18);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(54, 15);
-            this.label57.TabIndex = 21;
-            this.label57.Text = "wxid：";
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(12, 450);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(67, 15);
+            this.label56.TabIndex = 6;
+            this.label56.Text = "返回值：";
             // 
             // FormDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 454);
+            this.ClientSize = new System.Drawing.Size(1009, 634);
+            this.Controls.Add(this.label56);
+            this.Controls.Add(this.txt_syslog);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
@@ -2144,7 +2105,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.TextBox txt_Lng;
-        private System.Windows.Forms.TextBox txt_positionReturn;
         private System.Windows.Forms.TextBox txt_v2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txt_v1;
@@ -2162,7 +2122,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.TextBox txt_gzhid;
-        private System.Windows.Forms.TextBox txt_gzhlog;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.ListBox lb_gzh;
         private System.Windows.Forms.Button button23;
@@ -2184,7 +2143,6 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.TextBox txt_labelList;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.TextBox txt_labelId;
         private System.Windows.Forms.Label label31;
@@ -2206,7 +2164,6 @@
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.TextBox txt_favId;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox txt_favItem;
         private System.Windows.Forms.TextBox txt_snswxid;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Button button32;
@@ -2239,7 +2196,6 @@
         private System.Windows.Forms.TextBox txt_setWxid;
         private System.Windows.Forms.TabPage tabPage12;
         private System.Windows.Forms.Button button42;
-        private System.Windows.Forms.TextBox txt_qrcodeLog;
         private System.Windows.Forms.Button button43;
         private System.Windows.Forms.TextBox txt_orderUrl;
         private System.Windows.Forms.Label label46;
@@ -2248,7 +2204,6 @@
         private System.Windows.Forms.TextBox txt_gzhUrl;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Button button45;
-        private System.Windows.Forms.TextBox txt_snsLog;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.TextBox txt_setSex;
@@ -2271,5 +2226,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox txt_syslog;
+        private System.Windows.Forms.Label label56;
     }
 }

@@ -730,27 +730,23 @@ namespace IPADDemo.WeChat
         /// </summary>
         /// <param name="wxid"></param>
         /// <param name="imgpath"></param>
-        public unsafe void Wx_SendImg(string wxid, string imgpath)
+        public unsafe string Wx_SendImg(string wxid, string imgpath)
         {
             WxDelegate.show(string.Format("发送图片 ：{0}", imgpath));
 
             fixed (int* WxUser1 = &pointerWxUser, imptr1 = &wx_imptr)
             {
-                try
-                {
-                    Image _image = Image.FromStream(WebRequest.Create(imgpath).GetResponse().GetResponseStream());
-                    //把文件读取到字节数组
-                    byte[] data = this.ImageToBytes(_image);
-                    if (data.Length > 0)
-                    {
-                        XzyWxApis.WXSendImage(pointerWxUser, wxid, data, data.Length, (int)imptr1);
-                        var datas = MarshalNativeToManaged((IntPtr)wx_imptr);
-                        var str = datas.ToString();
-                        Wx_ReleaseEX(ref wx_imptr);
-                    }
-                    _image = null;
-                }
-                catch { }
+
+                Image _image = Image.FromStream(WebRequest.Create(imgpath).GetResponse().GetResponseStream());
+                //把文件读取到字节数组
+                byte[] data = this.ImageToBytes(_image);
+
+                XzyWxApis.WXSendImage(pointerWxUser, wxid, data, data.Length, (int)imptr1);
+                var datas = MarshalNativeToManaged((IntPtr)wx_imptr);
+                var str = datas.ToString();
+                Wx_ReleaseEX(ref wx_imptr);
+                _image = null;
+                return str;
             }
         }
 
@@ -1445,7 +1441,7 @@ namespace IPADDemo.WeChat
         /// </summary>
         /// <param name="wxid"></param>
         /// <param name="content"></param>
-        public unsafe void Wx_SendMoment(string content, List<string> imagelist)
+        public unsafe string Wx_SendMoment(string content, List<string> imagelist)
         {
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
@@ -1467,11 +1463,13 @@ namespace IPADDemo.WeChat
                     var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                     result = datas.ToString();
                     Wx_ReleaseEX(ref msgPtr);
+                    return result;
                 }
+                return "参数错误";
             }
         }
 
-        public unsafe void Wx_SendMoment(string content)
+        public unsafe string Wx_SendMoment(string content)
         {
             var result = "";
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
@@ -1480,6 +1478,7 @@ namespace IPADDemo.WeChat
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 result = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);
+                return result;
             }
         }
 

@@ -388,7 +388,7 @@ namespace IPADDemo
 
         private void button34_Click(object sender, EventArgs e)
         {
-            var res = weChatThread.Wx_SnsComment(txt_snsId.Text, Encoding.Default.GetString(Encoding.UTF8.GetBytes(txt_snsContext.Text)), txt_snsPlId.Text.ConvertToInt32());
+            var res = weChatThread.Wx_SnsComment(txt_snsId.Text,txt_snsContext.Text, txt_snsPlId.Text.ConvertToInt32());
             txt_syslog.Text = res.ConvertToString();
         }
 

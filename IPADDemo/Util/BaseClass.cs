@@ -199,5 +199,14 @@ namespace IPADDemo.Util
             Image image = Image.FromStream(ms);
             return image;
         }
+
+        /// <summary>
+        /// utf8转ansi
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string Utf8ToAnsi(this string str) {
+           return Cover.MByteToWChar(str, 936);
+        }
     }
 }

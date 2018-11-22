@@ -1561,10 +1561,12 @@ namespace IPADDemo.WeChat
                         }
                         else if (c.UserName.IndexOf("gh_") != -1) {
                             WxDelegate.getGZH(c);
-                        }
-                            
+                        }    
                     }
-                    if (con == 0) { break; }
+                    if (con == 0) {
+
+                        break;
+                    }
                 }
                 XzyWxApis.WXSyncReset(pointerWxUser);
             }

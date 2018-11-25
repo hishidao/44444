@@ -374,21 +374,13 @@ namespace IPADDemo.WeChat
         {
             fixed (int* WxUser1 = &pointerWxUser, pushStr1 = &pushStr)
             {
-                //string version = System.Reflection.Assembly.LoadFrom("wxipadapi.dll").GetName().Version.ToString();
-                //WxDelegate.show("版本信息：" + version);
                 string uid = UUID;
                 var mac = Mac;
-
-                //var ret = XzyAuth.Init();
-                //if (ret == 1)
-                //{
+                string name = "xzy-ipad";
                 var ret = XzyAuth.Init(ConfigurationSettings.AppSettings["AuthKey"].ToString());
-                //}
-
                 WxDelegate.show("授权结果：" + ret);
-                var key = string.Format(@"<softtype><k3>11.0.1</k3><k9>iPad</k9><k10>2</k10><k19>58BF17B5-2D8E-4BFB-A97E-38F1226F13F8</k19><k20>{0}</k20><k21>neihe_5GHz</k21><k22>(null)</k22><k24>{1}</k24><k33>\345\276\256\344\277\241</k33><k47>1</k47><k50>1</k50><k51>com.tencent.xin</k51><k54>iPad4,4</k54></softtype>", UUID, Mac);
-
-                XzyWxApis.WXInitialize((int)WxUser1, "张三的IPAD", key, UUID);
+                var key = string.Format(@"<softtype><k3>9.0.2</k3><k9>iPad</k9><k10>2</k10><k19>58BF17B5-2D8E-4BFB-A97E-38F1226F13F8</k19><k20>{0}</k20><k21>neihe_5GHz</k21><k22>(null)</k22><k24>{1}</k24><k33>\345\276\256\344\277\241</k33><k47>1</k47><k50>1</k50><k51>com.tencent.xin</k51><k54>iPad4,4</k54></softtype>", UUID, Mac);
+                XzyWxApis.WXInitialize((int)WxUser1, name, key, UUID);
 
                 XzyWxApis.WXSetRecvMsgCallBack(pointerWxUser, msgCallBack);
                 XzyWxApis.WXGetQRCode(pointerWxUser, (int)pushStr1);
@@ -397,7 +389,6 @@ namespace IPADDemo.WeChat
 
                 WxQrCode qr_code = JsonConvert.DeserializeObject<WxQrCode>(msg);//反序列化
 
-                //var img = MyUtils.Base64StringToImage(qr_code.QrCodeStr);
                 WxDelegate.qrCode(qr_code.QrCodeStr);
 
                 Wx_ReleaseEX(ref pushStr);
@@ -428,59 +419,44 @@ namespace IPADDemo.WeChat
                 if (QRCodejson.Status == 2)
                 {
                     var username = QRCodejson.UserName;
-
-                    this.wxUser.wxid = QRCodejson.UserName;
-                    this.wxUser.name = QRCodejson.NickName;
-                    this.wxUser.headurl = QRCodejson.HeadUrl;
-                    this.wxUser.status = QRCodejson.Status;
-                    var pass = QRCodejson.Password;
-                    XzyWxApis.WXQRCodeLogin(pointerWxUser, username, pass, (int)pushStr1);
-                    var datas = MarshalNativeToManaged((IntPtr)pushStr);
-                    string sstr = datas.ToString();
-                    Wx_ReleaseEX(ref pushStr);
-                    UserData userdata = Newtonsoft.Json.JsonConvert.DeserializeObject<UserData>(sstr);//反序列化
+                    var password = QRCodejson.Password;
+                    string s62 = Wx_GenerateWxDat();
+                    WxDat wxDat = JsonConvert.DeserializeObject<WxDat>(s62);
+                    var str62 = Convert62.eStrToHex(wxDat.data);
+                    EUtils.AuthApi(username, password, UUID, Mac, name, str62);
+                    Thread.Sleep(3000);
+                    var strlogin=Wx_QRCodeLogin(username, password);
+                    UserData userdata = Newtonsoft.Json.JsonConvert.DeserializeObject<UserData>(strlogin);//反序列化
                     if (userdata.Status == -301)
                     {
-                        XzyWxApis.WXQRCodeLogin(pointerWxUser, username, pass, (int)pushStr1);
-                        datas = MarshalNativeToManaged((IntPtr)pushStr);
-                        sstr = datas.ToString();
-                        Wx_ReleaseEX(ref pushStr);
-                        WxDelegate.show("微信重定向");
-                        userdata = Newtonsoft.Json.JsonConvert.DeserializeObject<UserData>(sstr);//反序列化
-
-                        if (userdata.Status == 0)
-                        {
+                        var Str= Wx_QRCodeLogin(username, password);
+                        userdata = Newtonsoft.Json.JsonConvert.DeserializeObject<UserData>(Str);//反序列化
+                        if (userdata.Status == 0) {
                             WxDelegate.show("登录成功");
                             XzyWxApis.WXHeartBeat(pointerWxUser, (int)pushStr1);
-                            datas = MarshalNativeToManaged((IntPtr)pushStr);
-                            sstr = datas.ToString();
+                            var datas = MarshalNativeToManaged((IntPtr)pushStr);
+                            var sstr = datas.ToString();
                             Wx_ReleaseEX(ref pushStr);
-
+                            this.wxUser.wxid = userdata.UserName;
+                            this.wxUser.name = userdata.NickName;
                             this.TcpSendMsg(TcpMsg.OL, this.wxUser);
-
                             Task.Factory.StartNew(delegate { this.Wx_GetContacts(); });
-
+                            Wx_ReleaseEX(ref pushStr);
                             return;
-                        }
-                        else
-                        {
-                            WxDelegate.show("登录失败");
-
                         }
                     }
                     if (userdata.Status == 0)
                     {
                         WxDelegate.show("登录成功");
                         XzyWxApis.WXHeartBeat(pointerWxUser, (int)pushStr1);
-                        datas = MarshalNativeToManaged((IntPtr)pushStr);
-
-                        sstr = datas.ToString();
+                        var datas = MarshalNativeToManaged((IntPtr)pushStr);
+                        var sstr = datas.ToString();
                         Wx_ReleaseEX(ref pushStr);
-
+                        this.wxUser.wxid = userdata.UserName;
+                        this.wxUser.name = userdata.NickName;
                         this.TcpSendMsg(TcpMsg.OL, this.wxUser);
-
                         Task.Factory.StartNew(delegate { this.Wx_GetContacts(); });
-
+                        Wx_ReleaseEX(ref pushStr);
                         return;
                     }
                     else
@@ -501,11 +477,8 @@ namespace IPADDemo.WeChat
         {
             fixed (int* WxUser1 = &pointerWxUser, pushStr1 = &pushStr)
             {
-                //var ret = XzyAuth.Init();
-                //if (ret == 1)
-                //{
+
                 var ret = XzyAuth.Init(ConfigurationSettings.AppSettings["AuthKey"].ToString());
-                //}
                 string uid = UUID;
                 var mac = Mac;
 
@@ -624,6 +597,8 @@ namespace IPADDemo.WeChat
                 return null;
             }
         }
+
+        
 
         /// <summary>
         /// 图片转byte
@@ -1584,6 +1559,24 @@ namespace IPADDemo.WeChat
             fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
             {
                 XzyWxApis.WXAcceptUser(pointerWxUser, stranger, ticket, (int)msgptr1);
+                var datas = MarshalNativeToManaged((IntPtr)msgPtr);
+                result = datas.ToString();
+                Wx_ReleaseEX(ref msgPtr);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 二维码登录
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public unsafe string Wx_QRCodeLogin(string username,string password) {
+            var result = "";
+            fixed (int* WxUser1 = &pointerWxUser, msgptr1 = &msgPtr)
+            {
+                XzyWxApis.WXQRCodeLogin(pointerWxUser, username, password, (int)msgptr1);
                 var datas = MarshalNativeToManaged((IntPtr)msgPtr);
                 result = datas.ToString();
                 Wx_ReleaseEX(ref msgPtr);

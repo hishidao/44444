@@ -170,7 +170,6 @@ C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\bin\Debug\log4net.xml
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\bin\Debug\Newtonsoft.Json.xml
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\bin\Debug\SuperSocket.ProtoBase.xml
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\bin\Debug\System.ValueTuple.xml
-C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.csprojAssemblyReference.cache
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.FormDemo.resources
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.Properties.Resources.resources
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.csproj.GenerateResource.cache
@@ -179,3 +178,4 @@ C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.csproj.CopyCompl
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.exe
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.pdb
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\bin\Debug\Xzy.IPAD.Core.pdb
+C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat\IPADDemo\obj\Debug\IPADDemo.csprojAssemblyReference.cache

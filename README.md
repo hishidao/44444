@@ -10,4 +10,5 @@
 
 ![](https://github.com/changtuiqie/Mac.WeChat/blob/master/demo.gif) <br/>
 
-demo源码暂时不放github了。如需要研究源码学习，请进群联系群主。
+demo源码暂时不放github了。如需要研究源码学习，请进群联系群主。<br/>
+demo源码使用c#进行开发，开发环境为VS2017 .net framework 4.6.1

@@ -8,6 +8,8 @@
 
 <a href="https://github.com/changtuiqie/Mac.WeChat/blob/master/API.txt" title="支持功能API文档">支持功能API文档</a><br/>
 
+请<a href="https://jingyan.baidu.com/article/335530daab956419cb41c38a.html">关闭dep</a> ，dep可能会导致不安全代码闪退。
+
 ![](https://github.com/changtuiqie/Mac.WeChat/blob/master/demo.gif) <br/>
 
 demo源码暂时不放github了。如需要研究源码学习，请进群联系群主。<br/>

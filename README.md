@@ -6,9 +6,9 @@
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=3194af004cbc013eff0a61b99a46ae6f66c2c1f1fc62a9cdf58de1fd2b471058">加入qq群：721314034</a>
 <br/>
 
-<a href="https://github.com/changtuiqie/Mac.WeChat/blob/master/API.txt" title="支持功能API文档">支持功能API文档</a><br/>
+<a target="_blank" href="https://github.com/changtuiqie/Mac.WeChat/blob/master/API.txt" title="支持功能API文档">支持功能API文档</a><br/>
 
-请<a href="https://jingyan.baidu.com/article/335530daab956419cb41c38a.html">关闭dep</a> ，dep可能会导致不安全代码闪退。
+请<a target="_blank" href="https://jingyan.baidu.com/article/335530daab956419cb41c38a.html">关闭dep</a> ，dep可能会导致不安全代码闪退。
 
 ![](https://github.com/changtuiqie/Mac.WeChat/blob/master/demo.gif) <br/>
 

@@ -16,5 +16,5 @@ demo源码使用c#进行开发，开发环境为VS2017 .net framework 4.6.1
 https://github.com/changtuiqie/Mac.WeChat.WebApi.Simple
 这个项目使用websocket+api即可调用，跨平台 跨语言。
 
-对该项目有兴趣的可以加入我的知识星球来一起交流。
+对该项目有兴趣的可以加入我的知识星球来一起交流。<br/>
 ![](https://github.com/changtuiqie/Mac.WeChat.WebApi.Simple/blob/master/zsxq.jpg) <br/>
